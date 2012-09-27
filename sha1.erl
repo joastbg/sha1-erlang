@@ -9,7 +9,13 @@
 %%% *file/1 functions show very bad performance.
 
 -module(sha1).
+
+%% Avoid compiler warnings
+-compile({no_auto_import,[list_to_integer/2]}).
+-compile({no_auto_import,[integer_to_list/2]}).
+
 -export([binstring/1, hexstring/1, binfile/1, hexfile/1]).
+
 -import(lists, [nth/2, map/2, foldl/3]).
 -import(erlang,[integer_to_list/2, list_to_integer/2]).
 
